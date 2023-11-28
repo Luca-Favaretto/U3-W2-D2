@@ -14,9 +14,7 @@ export class InactivePostComponent implements OnInit {
       let array = post;
       console.log(post);
       array.forEach((post: any) => {
-        if (!post.active) {
-          this.arrayPost.push(post);
-        }
+        this.arrayPost = array.filter((post: any) => !post.active);
       });
     });
   }

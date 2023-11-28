@@ -12,11 +12,7 @@ export class ActivePostComponent implements OnInit {
     this.postSrv.getJson().then((post) => {
       let array = post;
       console.log(post);
-      array.forEach((post: any) => {
-        if (post.active) {
-          this.arrayPost.push(post);
-        }
-      });
+      this.arrayPost = array.filter((post: any) => post.active);
     });
   }
 
